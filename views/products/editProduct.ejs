@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= product.name %>
+    </title>
+</head>
+
+<body>
+    <h1>Editing <%= product.name %>
+    </h1>
+
+    <form method="post" action="/products/<%= product._id %>?_method=PUT">
+        <label for="name">Product Name:</label>
+        <input type="text" name="name" id="name" value="<%= product.name %>">
+        <label for="price">Price:</label>
+        <input type="text" name="price" id="price" value="<%= product.price %>">
+        <label for="cat">Product Category</label>
+        <select name="category" id="cat">
+            <% categories.forEach(cat=> { %>
+                <% if (cat===product.category) { %>
+                    <option value="<%= cat %>" selected><%= cat %> </option>
+                    <% } else { %>
+                        <option value="<%= cat %>">
+                            <%= cat %>
+                        </option>
+                        <% } %>
+                            <% }) %>
+
+                                <!-- <option value="<%= product.category %>"><%= product.category %></option>
+            <option value="fruit">Fruit</option>
+            <option value="vegetable">Vegetable</option>\
+            <option value="dairy">Dairy</option> -->
+        </select>
+        <button>Submit</button>
+</body>
+
+</html>

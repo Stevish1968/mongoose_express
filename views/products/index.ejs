@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>All Products</title>
+</head>
+
+<body> <div class="container">
+    <h1>All Products</h1>
+   
+        <ul>
+            <% products.forEach(product=> { %>
+                <li><a href="/products/<%= product._id %>">
+                        <%= product.name %>
+                    </a> - $<%= product.price %>
+                </li>
+                <% }) %>
+
+        </ul>
+       <div class="mt-2"><a href="/products/new">Add New Product</a></div>
+       <!-- <a href="/products?category=fruit">Sort By Fruit</a><br>
+       <a href="/products?category=vegetable">Sort By vegetable</a><br>
+       <a href="/products?category=dairy">Sort By dairy</a> -->
+    </div>
+    <script language="javascript" src="/js/bootstrap.min.js"></script>
+</body>
+
+</html> 

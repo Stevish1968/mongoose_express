@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Add New Product</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add New Product</h1>
+        <form method="post" action="/products">
+            <label for="name">Product Name:</label>
+            <input type="text" name="name" id="name" placeholder="Product Name">
+            <label for="price">Price:</label>
+            <input type="text" name="price" id="price">
+            <label for="cat">Product Category</label>
+            <select name="category" id="cat">
+                <% categories.forEach(cat => { %>
+                   <option value="<%= cat  %>"><%= cat %> </option>
+                <% }) %>
+                <!-- <option value="fruit">Fruit</option>
+                <option value="vegetable">Vegetable</option>\
+                <option value="dairy">Dairy</option> -->
+            </select>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
